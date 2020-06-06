@@ -1,7 +1,7 @@
 <template>
   <div id="Services">
       <div class="cards-container">
-        <Cards v-bind="cards" />
+        <Cards />
       </div>
   </div>
 </template>
