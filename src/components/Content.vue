@@ -23,9 +23,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#content{
-
-}
+// #content{
+// }
 .info-container {
   position: relative;
   width: 100%;
