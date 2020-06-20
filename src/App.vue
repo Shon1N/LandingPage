@@ -86,7 +86,7 @@ body{
   top: 10px;
   // width: calc(100% - 60px);
   // height: calc(100vh - 60px);
-  padding: 20px;
+  padding: 19px;
   background-color: #fff;
   // border-radius: 30px;
   // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);

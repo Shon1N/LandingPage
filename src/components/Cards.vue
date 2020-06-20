@@ -1,9 +1,12 @@
 <template>
 <div>
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <div class="landing-page">
+   <div class="LineBreaks"></div>
+ <input class="search-bar" type="text" v-model="search" placeholder="Search project">
+ <div class="LineBreaks"></div>
 <div class="row">
-  
- <div v-bind:key="card.id"  v-for="card in cards">   
+   <div v-bind:key="card.id"  v-for="card in filteredCards">   
    <div class="column col-xs-6 col-sm-6 col-md-4">
   <div v-bind:id="'card-'+card.id">
     <div class="card" style="width: 18rem;">
@@ -19,58 +22,29 @@
 </div>
   </div>
   </div>
+  </div>
 </template>
 
 <script>
+
+import projects from '../data/projects.vue'
+// import func from '../../vue-temp/vue-editor-bridge';
+
 export default {
     name: "Cards",
 data(){
+  console.log("Projets", projects);
   return{
-    cards: [
-      {
-        id: 1,
-        name: "Name",
-        path: "https://picsum.photos/1024/480/?image=54",
-        btnText: "Name",
-        link: "#"
-      },
-      {
-        id: 2,
-        name: "Name",
-        path: "https://picsum.photos/1024/480/?image=54",
-        btnText: "Name",
-        link: "#"
-      },
-      {
-        id: 3,
-        name: "Name",
-        path: "https://picsum.photos/1024/480/?image=54",
-        btnText: "Name",
-        link: "#"
-      },
-      {
-        id: 4,
-        name: "Name",
-        path: "https://picsum.photos/1024/480/?image=54",
-        btnText: "Name",
-        link: "#"
-      },
-      {
-        id: 5,
-        name: "Name",
-        path: "https://picsum.photos/1024/480/?image=54",
-        btnText: "Name",
-        link: "#"
-      },
-      {
-        id: 6,
-        name: "Name",
-        path: "https://picsum.photos/1024/480/?image=54",
-        btnText: "Name",
-        link: "#"
-      }
-    ]
+    cards: projects.data,
+    search: ''
   }
+},
+computed: {
+ filteredCards: function(){
+   return this.cards.filter((card) => {
+     return card.name.toLowerCase().match(this.search.toLowerCase());
+   })
+ }
 }
 };
 </script>
@@ -78,6 +52,30 @@ data(){
 <style lang="scss" scoped>
 .row {
   //display: flex;
+}
+
+.search-bar{
+width: 289px;
+height: 44px;
+}
+@media screen and (min-width:572px) and (max-width:767px) {
+.search-bar{
+margin-left: 79px;
+width: 289px;
+height: 44px;
+}
+}
+
+@media only screen and (min-width: 768px) {
+.search-bar{
+margin-left: 107px;
+width: 289px;
+height: 44px;
+}
+}
+
+.LineBreaks{
+  height: 20px;
 }
 
 .column {
