@@ -71,8 +71,8 @@ height: 44px;
 .search-bar{
 margin-left: 79px;
 width: 289px;
-height: 44px;
-}
+height: 44px; 
+} 
 }
 
 @media only screen and (min-width: 768px) {
