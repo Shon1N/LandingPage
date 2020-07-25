@@ -6,6 +6,10 @@
  <input class="search-bar" type="text" v-model="search" placeholder="Search project">
  <div class="LineBreaks"></div>
 <div class="row">
+   <div v-bind:key="card.id"  v-for="card in visibleProjects"
+   v-bind:visibleProjects="visibleProjects"
+   v-bind:currentPage="currentPage"
+   > 
    <div v-bind:key="card.id"  v-for="card in filteredCards">   
    <div class="column col-xs-6 col-sm-6 col-md-4">
   <div v-bind:id="'card-'+card.id">
@@ -23,6 +27,7 @@
   </div>
   </div>
   </div>
+  </div>
 </template>
 
 <script>
@@ -36,8 +41,12 @@ data(){
   console.log("Projets", projects);
   return{
     cards: projects.data,
-    search: ''
-  }
+    search: '',
+    nextId: projects.data[projects.data.length - 1].id +1,
+    currentPage: 0,
+    pageSize: 3,
+    visibleProjects: []
+  };
 },
 computed: {
  filteredCards: function(){
