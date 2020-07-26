@@ -84,21 +84,19 @@ body{
 .content {
   position: absolute;
   top: 10px;
-  // width: calc(100% - 60px);
-  // height: calc(100vh - 60px);
   padding: 19px;
   background-color: #fff;
-  // border-radius: 30px;
-  // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: 1s transform cubic-bezier(0,.12,.14,1);
-  // top: 0;
   right: 0;
-  // bottom: 0;
   left: 0;
 }
 .open {
-  transform: translateX(259px);
   position: fixed !important;
-  top: 0 !important;
+  left: 259px;
+  top: 9px !important;
+  -moz-transition:width 2s, height 2s, background-color 2s, -moz-transform 2s;
+  -webkit-transition:width 2s, height 2s, background-color 2s, -webkit-transform 2s;
+  -o-transition:width 2s, height 2s, background-color 2s, -o-transform 2s;
+  transition:width 2s, height 2s, background-color 2s, transform 2s;
 }
 </style>
