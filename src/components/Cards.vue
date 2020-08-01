@@ -36,6 +36,7 @@ data(){
   console.log("Projets", projects);
   return{
     cards: projects.data,
+    fCards: this.filteredCards,
     search: '',
   };
 },
