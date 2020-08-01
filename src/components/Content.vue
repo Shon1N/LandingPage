@@ -3,7 +3,7 @@
      <img alt="Vue logo" src="" class="logo" >
     <div class="info-container">
         <Carousel />
-        <Services />
+        <Projects />
         <About />
     </div>
   </div>
@@ -12,12 +12,12 @@
 <script>
 import Carousel from "./Carousel.vue";
 import About from "./About.vue";
-import Services from "./Services.vue";
+import Projects from "./Projects.vue";
 export default {
   components: {
       Carousel,
       About,
-    Services,
+    Projects,
   },    
 };
 </script>
